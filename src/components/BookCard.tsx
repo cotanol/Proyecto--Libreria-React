@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Book } from "../types/book";
 
 interface BookCardProps {
@@ -9,13 +10,15 @@ export function BookCard({ book, onAddToCart }: BookCardProps) {
   return (
     <div className="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-200 hover:scale-105">
       <div className="relative">
-        <img
-          src={book.coverImage}
-          alt={book.title}
-          className="w-full h-64 object-cover"
-        />
+        <Link to={`/libro/${book.id}`}>
+          <img
+            src={book.coverImage}
+            alt={book.title}
+            className="w-full h-64 object-cover"
+          />
+        </Link>
         <div className="absolute top-0 right-0 bg-indigo-600 text-white px-3 py-1 m-2 rounded-full">
-          ${book.price.toFixed(2)}
+          ${typeof book.price === "number" ? book.price.toFixed(2) : "0.00"}
         </div>
       </div>
       <div className="p-6">

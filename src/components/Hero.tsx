@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export function Hero() {
   return (
     <div className="relative bg-indigo-800 overflow-hidden">
@@ -17,12 +19,12 @@ export function Hero() {
               </p>
               <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                 <div className="rounded-md shadow">
-                  <a
-                    href="#books"
+                  <Link
+                    to="/categorias"
                     className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-white hover:bg-indigo-50 md:py-4 md:text-lg md:px-10"
                   >
-                    Ver Catálogo
-                  </a>
+                    Ver Categorías
+                  </Link>
                 </div>
               </div>
             </div>
