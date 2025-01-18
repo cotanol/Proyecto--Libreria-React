@@ -29,6 +29,7 @@ function App() {
           <Route path="/contacto" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+
         <Footer />
       </CartProvider>
     </>

@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Book } from "../../types/book";
 import FormBook from "./FormBook";
 import { useBook } from "../../hooks/useBook";
-import { useCategory } from "../../hooks/useCategories";
 
 const CRUD = () => {
   const { addBook } = useBook();
