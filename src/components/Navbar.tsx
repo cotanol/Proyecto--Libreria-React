@@ -104,18 +104,26 @@ const Navbar = () => {
             >
               Categorías
             </NavLink>
-            <a
-              href="#"
-              className="text-indigo-200 hover:bg-indigo-500 px-3 py-2 rounded-md"
+            <NavLink
+              to="/ofertas"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-white hover:bg-indigo-500 px-3 py-2 rounded-md"
+                  : "text-indigo-200 hover:bg-indigo-500 px-3 py-2 rounded-md"
+              }
             >
               Ofertas
-            </a>
-            <a
-              href="#"
-              className="text-indigo-200 hover:bg-indigo-500 px-3 py-2 rounded-md"
+            </NavLink>
+            <NavLink
+              to="/contacto"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-white hover:bg-indigo-500 px-3 py-2 rounded-md"
+                  : "text-indigo-200 hover:bg-indigo-500 px-3 py-2 rounded-md"
+              }
             >
               Contacto
-            </a>
+            </NavLink>
           </div>
         )}
       </div>
