@@ -10,6 +10,7 @@ import CRUD from "./pages/CRUD";
 import CheckoutPage from "./pages/Checkout";
 import { NotFound } from "./pages/NotFound";
 import { Contact } from "./pages/Contact";
+import OrderPage from "./pages/order-page";
 
 function App() {
   return (
@@ -27,6 +28,8 @@ function App() {
           <Route path="/CRUD" element={<CRUD />} />
           <Route path="/checkout" element={<CheckoutPage />} />
           <Route path="/contacto" element={<Contact />} />
+          <Route path="/orden/:id_orden" element={<OrderPage />} />
+
           <Route path="*" element={<NotFound />} />
         </Routes>
 

@@ -1,50 +1,52 @@
-# React + TypeScript + Vite
+# Ecommerce Libreria - with React - Firebase - Typescript
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+##### `Dev - Francisco Salcedo`
 
-Currently, two official plugins are available:
+<img src="https://res.cloudinary.com/practicaldev/image/fetch/s--qo_Wp38Z--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/e0nl7ziy1la7bpwj7rsp.png" width="50" height="50" >
+<img src="https://images.seeklogo.com/logo-png/28/1/firebase-logo-png_seeklogo-285376.png?v=1957907072511277888" width="50" height="50" >
+<img src="https://images.seeklogo.com/logo-png/29/1/typescript-logo-png_seeklogo-298572.png?v=1957907471105087288" width="50" height="50" >
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 1. Descripción
 
-## Expanding the ESLint configuration
+Ecommerce hecho en react typescript con base de datos en Firebase.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### 1.1. Paginas
 
-- Configure the top-level `parserOptions` property like this:
+- **Home**: Todos Los libros, Hero
+- **Book-Detail**: Detalles del libro seleccionado
+- **Categories**: Se cargan las Categorias de la BD
+- **Categories-Products**: Se cargan solo los libros de la Categoria seleccionado
+- **Not-Found**: Pagina por defecto si no esta enrutada en el router
+- **CRUD**: (_Insertar un libro_)
+- **Contact**: Contactarse
+- **Checkout**: ver el carrito y formulario para comprar
+- **Order-Page**: Una vez hecha la compra te manda a una pagina para ver tu numero de seguimiento
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## 2. Dependencias
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+`firebase` `react-router-dom` `react-spinner` `react-icons`
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### 2.1. Uso Dependencias
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- **firebase**: Como Base de Datos y para llamar y guardar los datos
+- **react-router-dom**: Para el enrutamiento.
+- **react-spinner**: Para el loading cuando se carga elementos en la pagina
+- **react-icons**: Algunos iconos que se usaran en la pagina
+
+## 3. Datos
+
+### 3.1. Credenciales para la conexion a la BD:
+
+`VITE_FIREBASE_API_KEY=AIzaSyBFQD4cM2zXVHZD_KOlun4tVT_wwlwCLSg
+VITE_FIREBASE_AUTH_DOMAIN=libreria-proyecto-20.firebaseapp.com
+VITE_FIREBASE_PROJECT_ID=libreria-proyecto-20
+VITE_FIREBASE_STORAGE_BUCKET=libreria-proyecto-20.firebasestorage.app
+VITE_FIREBASE_MESSAGING_SENDER_ID=95680855599
+VITE_FIREBASE_APP_ID=1:95680855599:web:5fbefebe0803dea0f9d0da`
+
+### 3.2. Tablas en Firebase:
+
+- **book**: Los libros que se usaran en el ecommerce
+- **categories**: La categoria de los libros
+- **contacts**: en la pestaña Contacto al llenar el formulario se crea 1 fila
+- **orders**: Al cumplir con los requisitos de la pagina checkout y que la compra sea aceptada del carrito

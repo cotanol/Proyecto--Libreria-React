@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
 import BuyerForm from "./BuyerForm";
 import { Buyer } from "../../types/buyer";
@@ -7,13 +7,16 @@ import { useOrder } from "../../hooks/useOrder";
 
 const CheckoutPage = () => {
   const { cartItems, total, setCartItems } = useCart();
+  const { createOrder } = useOrder();
+  const navigate = useNavigate();
+  const [confirmEmail, setConfirmEmail] = useState<string>("");
+  const [emailError, setEmailError] = useState<string | null>(null);
 
   const handleClickTrash = (id: string) => {
     const updatedCartItems = cartItems.filter((item) => item.id !== id);
     setCartItems(updatedCartItems);
   };
 
-  const { createOrder } = useOrder();
   const [buyer, setBuyer] = useState<Buyer>({
     fullname: "",
     phone: "",
@@ -28,8 +31,19 @@ const CheckoutPage = () => {
     });
   };
 
+  const handleChangeConfirmEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setConfirmEmail(e.target.value);
+  };
+
   const handleSubmitBuyerForm = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (buyer.email !== confirmEmail) {
+      setEmailError("Los correos no coinciden");
+      return;
+    }
+
+    setEmailError(null);
 
     if (
       !buyer.fullname.trim() ||
@@ -41,9 +55,18 @@ const CheckoutPage = () => {
       return;
     }
 
-    await createOrder({ buyer: buyer, items: cartItems, total: total, id: "" });
+    const response = await createOrder({
+      buyer: buyer,
+      items: cartItems,
+      total: total,
+      id: "",
+    });
+
     alert("¡Gracias por tu compra!");
+
     setCartItems([]);
+
+    navigate(`/orden/${response}`);
   };
 
   if (cartItems.length === 0) {
@@ -136,6 +159,9 @@ const CheckoutPage = () => {
                 buyer={buyer}
                 handleChangeInput={handleChangeInput}
                 handleSubmitBuyerForm={handleSubmitBuyerForm}
+                confirmEmail={confirmEmail}
+                handleChangeConfirmEmail={handleChangeConfirmEmail}
+                emailError={emailError}
               />
               <Link
                 to="/"

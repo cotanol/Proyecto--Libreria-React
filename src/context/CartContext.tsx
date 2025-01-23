@@ -51,7 +51,14 @@ export const CartProvider = ({ children }: CartProviderProps) => {
 
   return (
     <CartContext.Provider
-      value={{ cartItems, setCartItems, count, setCount, total, setTotal }}
+      value={{
+        cartItems,
+        setCartItems,
+        count,
+        setCount,
+        total,
+        setTotal,
+      }}
     >
       {children}
     </CartContext.Provider>

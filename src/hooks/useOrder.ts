@@ -4,39 +4,36 @@ import { addDoc, collection } from "firebase/firestore";
 import db from "../db/db";
 
 interface UseOrderProps {
-  order: Order | null;
   loading: boolean;
   error: string | null;
 
-  createOrder: (order: Order) => Promise<void>;
+  createOrder: (order: Order) => Promise<string>;
 }
 
 export function useOrder(): UseOrderProps {
   const [loading, setLoading] = useState(true);
-  const [order, setOrder] = useState<Order | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   const collectionName = collection(db, "orders");
 
-  const createOrder = async (order: Order): Promise<void> => {
+  const createOrder = async (orderData: Order): Promise<string> => {
     try {
       setLoading(true);
       setError(null);
-      setOrder(null);
 
-      const { id, ...orderWithoutId } = order;
+      const { id, ...orderWithoutId } = orderData;
+      const response = await addDoc(collectionName, orderWithoutId);
 
-      await addDoc(collectionName, orderWithoutId);
-      setOrder(order);
+      return response.id;
     } catch (error) {
       setError("Error al crear la orden");
+      return "";
     } finally {
       setLoading(false);
     }
   };
 
   return {
-    order,
     loading,
     error,
     createOrder,
