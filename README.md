@@ -2,8 +2,8 @@
 <h1> Ecommerce Libreria - with React - Firebase - Typescript </h1>
 <h5> Dev - Francisco Salcedo </h5>
 <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--qo_Wp38Z--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/e0nl7ziy1la7bpwj7rsp.png" width="50" height="50" >
-<img src="https://images.seeklogo.com/logo-png/28/1/firebase-logo-png_seeklogo-285376.png?v=1957907072511277888" width="50" height="50" >
-<img src="https://images.seeklogo.com/logo-png/29/1/typescript-logo-png_seeklogo-298572.png?v=1957907471105087288" width="50" height="50" >
+<img src="https://firebase.google.com/static/images/brand-guidelines/logo-logomark.png?hl=es-419" width="50" height="50" >
+<img src="https://tse2.mm.bing.net/th?id=OIP.maKe3jXsLd8flovNsX2_3QHaHa&w=474&h=474&c=7" width="50" height="50" >
 </div>
 
 ## 1. Descripción
