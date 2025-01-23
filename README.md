@@ -1,14 +1,14 @@
-# Ecommerce Libreria - with React - Firebase - Typescript
-
-##### `Dev - Francisco Salcedo`
-
+<div align="center">
+<h1> Ecommerce Libreria - with React - Firebase - Typescript </h1>
+<h5> Dev - Francisco Salcedo </h5>
 <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--qo_Wp38Z--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/e0nl7ziy1la7bpwj7rsp.png" width="50" height="50" >
 <img src="https://images.seeklogo.com/logo-png/28/1/firebase-logo-png_seeklogo-285376.png?v=1957907072511277888" width="50" height="50" >
 <img src="https://images.seeklogo.com/logo-png/29/1/typescript-logo-png_seeklogo-298572.png?v=1957907471105087288" width="50" height="50" >
+</div>
 
 ## 1. Descripción
 
-Ecommerce hecho en react typescript con base de datos en Firebase.
+Este proyecto es un Ecommerce de libros creado con React, TypeScript y Firebase. Incluye funcionalidades como navegación por categorías, gestión de productos basico (agregar libro), carrito de compras, y una experiencia intuitiva para los usuarios.
 
 ### 1.1. Paginas
 
@@ -17,7 +17,7 @@ Ecommerce hecho en react typescript con base de datos en Firebase.
 - **Categories**: Se cargan las Categorias de la BD
 - **Categories-Products**: Se cargan solo los libros de la Categoria seleccionado
 - **Not-Found**: Pagina por defecto si no esta enrutada en el router
-- **CRUD**: (_Insertar un libro_)
+- **CRUD**: (_Insertar un libro_) _/CRUD_
 - **Contact**: Contactarse
 - **Checkout**: ver el carrito y formulario para comprar
 - **Order-Page**: Una vez hecha la compra te manda a una pagina para ver tu numero de seguimiento
@@ -46,7 +46,21 @@ VITE_FIREBASE_APP_ID=1:95680855599:web:5fbefebe0803dea0f9d0da`
 
 ### 3.2. Tablas en Firebase:
 
-- **book**: Los libros que se usaran en el ecommerce
-- **categories**: La categoria de los libros
-- **contacts**: en la pestaña Contacto al llenar el formulario se crea 1 fila
-- **orders**: Al cumplir con los requisitos de la pagina checkout y que la compra sea aceptada del carrito
+| Tabla        | Descripción                                         |
+| ------------ | --------------------------------------------------- |
+| `books`      | Lista de libros con sus datos principales.          |
+| `categories` | Categorías de los libros.                           |
+| `contacts`   | Datos enviados desde el formulario de contacto.     |
+| `orders`     | Pedidos realizados por los usuarios en el checkout. |
+
+## 4. Inicializar Proyecto
+
+### Instalación:
+
+```bash
+# Instalar dependencias
+npm install
+
+# Iniciar el proyecto
+npm run dev
+```
