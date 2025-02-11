@@ -7,7 +7,7 @@
 </div>
 
 ## 1. Descripción
-
+Ver Proyecto (https://proyecto-libreria-react-firebase.vercel.app/)
 Este proyecto es un Ecommerce de libros creado con React, TypeScript y Firebase. Incluye funcionalidades como navegación por categorías, gestión de productos basico (agregar libro), carrito de compras, y una experiencia intuitiva para los usuarios.
 
 ### 1.1. Paginas
